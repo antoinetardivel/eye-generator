@@ -20,15 +20,15 @@ const gradientGenerator = (color1: color, color2: color, steps: number) => {
   newColor.push(color1);
   for (let i = 0; i < steps - 2; i++) {
     let stepColor: color = [];
-    prevColor.map((alpha, index) => {
-      if (color1[index] < color2[index]) {
-        stepColor.push(prevColor[index] + stepAlphas[index]);
-      } else if (color1[index] > color2[index]) {
-        stepColor.push(prevColor[index] - stepAlphas[index]);
+    for (let e = 0; e < prevColor.length; e++) {
+      if (color1[e] < color2[e]) {
+        stepColor.push(prevColor[e] + stepAlphas[e]);
+      } else if (color1[e] > color2[e]) {
+        stepColor.push(prevColor[e] - stepAlphas[e]);
       } else {
-        stepColor.push(prevColor[index]);
+        stepColor.push(prevColor[e]);
       }
-    });
+    };
     prevColor = stepColor;
     newColor.push(stepColor);
   }

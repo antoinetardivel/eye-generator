@@ -19,7 +19,6 @@ if (canvas) {
 }
 
 let time = 0;
-let clock = 0;
 let vesselsNumber = 0;
 let scale = 0;
 let colors = [];
@@ -28,9 +27,8 @@ let points: EyeLine[] = [];
 const update = (past: any, now = performance.now()) => {
   const last = past || now;
   let d = (now - last) * (60 / 1000); // normalize at 144fps
-  clock += d;
+  time += d * 0.01;
 
-  time += 0.01;
   ctx?.save();
   ctx?.translate(canvasWidth / 2, canvasHeight / 2);
   if (time < 3) {
