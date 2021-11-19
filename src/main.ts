@@ -2,7 +2,7 @@ import "./style.scss";
 
 import "normalize.css/normalize.css";
 
-import EyeLine from "./elements/EyeLine";
+import EyeLine from "./drawings/EyeLine";
 import randomRGBA from "./utils/randomRGBA";
 import gradientGenerator from "./utils/gradientGenerator";
 import config from "./config/config";
